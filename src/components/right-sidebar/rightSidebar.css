@@ -1,0 +1,131 @@
+.right-sidebar {
+  width: 300px;
+  padding: var(--spacing-md);
+  background-color: var(--background-white);
+  height: calc(100vh - 64px); /* Subtract navbar height */
+  position: fixed;
+  right: 0;
+  top: 64px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.sidebar-card {
+  background-color: var(--background-white);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-md);
+}
+
+.card-header {
+  margin-bottom: var(--spacing-md);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.add-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  padding: var(--spacing-xs);
+  border-radius: 50%;
+
+  transition: 250ms ease-in-out;
+  transition-property: background-color, color;
+}
+
+.add-btn:where(:hover, :focus-visible) {
+  background-color: var(--background-light);
+  color: var(--primary-color);
+}
+
+.events-list,
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.event-item {
+  color: var(--text-secondary);
+
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-title {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.event-date {
+  font-size: 0.875rem;
+}
+
+.task-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-title {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.task-progress {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.progress-bar {
+  height: 4px;
+  background-color: var(--background-light);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+/* Tablet and Mobile styles */
+@media screen and (max-width: 1023px) {
+  .right-sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: var(--spacing-md);
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+  .right-sidebar {
+    padding-bottom: 80px; /* Space for bottom navigation */
+  }
+}

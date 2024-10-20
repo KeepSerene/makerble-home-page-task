@@ -1,0 +1,132 @@
+.content-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.card-wrapper {
+  width: 100%;
+}
+
+.content-card {
+  background-color: var(--background-white);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.content-card:where(:hover, :focus-within) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Update card specific styles */
+.content-card.update .card-header {
+  margin-bottom: var(--spacing-md);
+
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: var(--background-light);
+  border-radius: 50%;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-info h3 {
+  color: var(--text-primary);
+  font-size: 0.938rem;
+  font-weight: 500;
+}
+
+.timestamp {
+  color: var(--text-secondary);
+  font-size: 0.813rem;
+}
+
+.card-content {
+  color: var(--text-primary);
+}
+
+.card-content h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-content p {
+  color: var(--text-secondary);
+  font-size: 0.938rem;
+  line-height: 1.5;
+}
+
+/* Event card specific styles */
+.content-card.event {
+  border-left: 4px solid var(--primary-color);
+}
+
+.content-card.event .card-content p {
+  font-size: 0.875rem;
+  margin-top: var(--spacing-xs);
+}
+
+/* Project card specific styles */
+.content-card.project .progress-bar {
+  height: 4px;
+  background-color: var(--background-light);
+  border-radius: 2px;
+  margin: var(--spacing-sm) 0;
+  overflow: hidden;
+}
+
+.content-card.project .progress {
+  height: 100%;
+  background-color: var(--primary-color);
+
+  transition: width 300ms ease;
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .card-wrapper {
+    max-width: 100%;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+  .content-cards {
+    gap: var(--spacing-sm);
+  }
+
+  .content-card {
+    padding: var(--spacing-sm);
+  }
+
+  .content-card.update .card-header {
+    gap: var(--spacing-sm);
+  }
+
+  .author-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .card-content h4 {
+    font-size: 0.938rem;
+  }
+
+  .card-content p {
+    font-size: 0.875rem;
+  }
+}

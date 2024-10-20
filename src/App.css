@@ -1,0 +1,33 @@
+.app {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--background-light);
+}
+
+.main-container {
+  display: flex;
+  margin-top: 64px; /* Height of navbar */
+}
+
+.content {
+  flex: 1;
+
+  padding: var(--spacing-md);
+  margin-left: 250px; /* Width of sidebar */
+  margin-right: 300px; /* Width of right sidebar */
+}
+
+/* Tablet styles */
+@media screen and (max-width: 1023px) {
+  .content {
+    margin-right: 0; /* Remove right sidebar margin */
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+  .content {
+    margin-left: 0; /* Remove left sidebar margin */
+    margin-bottom: 60px; /* Space for bottom navigation */
+  }
+}
