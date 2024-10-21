@@ -30,35 +30,33 @@ function LeftSideBar({ activeNavItem, onNavItemClick }) {
   ];
 
   return (
-    <aside>
-      <nav className={`left-sidebar ${isCollapsed ? "collapsed" : ""}`}>
-        <button
-          type="button"
-          onClick={() => setIsCollapsed(!isCollapsed)}
-          aria-label="Click to toggle the left sidebar"
-          className="collapse-btn"
-        >
-          {isCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
-        </button>
+    <nav className={`left-sidebar ${isCollapsed ? "collapsed" : ""}`}>
+      <button
+        type="button"
+        onClick={() => setIsCollapsed(!isCollapsed)}
+        aria-label="Click to toggle the left sidebar"
+        title="Toggle the left sidebar"
+        className="collapse-btn"
+      >
+        {isCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+      </button>
 
-        <div className="nav-items">
-          {navItems.map((item) => (
-            <button
-              type="button"
-              key={item.id}
-              onClick={() => onNavItemClick(item.id)}
-              aria-label={`Click to view ${item.label}`}
-              className={`nav-item ${
-                activeNavItem === item.id ? "active" : ""
-              }`}
-            >
-              <span className="icon">{item.icon}</span>
-              {!isCollapsed && <span className="label">{item.label}</span>}
-            </button>
-          ))}
-        </div>
-      </nav>
-    </aside>
+      <div className="nav-items">
+        {navItems.map((item) => (
+          <button
+            type="button"
+            key={item.id}
+            onClick={() => onNavItemClick(item.id)}
+            aria-label={`Click to view ${item.label}`}
+            title={isCollapsed ? item.label : ""}
+            className={`nav-item ${activeNavItem === item.id ? "active" : ""}`}
+          >
+            <span className="icon">{item.icon}</span>
+            {!isCollapsed && <span className="label">{item.label}</span>}
+          </button>
+        ))}
+      </div>
+    </nav>
   );
 }
 

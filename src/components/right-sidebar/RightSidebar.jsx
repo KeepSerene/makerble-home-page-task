@@ -24,6 +24,7 @@ function RightSideBar() {
           <button
             type="button"
             aria-label="Click to add a new event"
+            title="Add new event"
             className="add-btn"
           >
             <Plus size={16} />
@@ -31,13 +32,13 @@ function RightSideBar() {
         </section>
 
         <div className="events-list">
-          {upcomingEvents.map((event) => (
-            <div key={event.id} className="event-item">
+          {upcomingEvents.map((upcomingEvent) => (
+            <div key={upcomingEvent.id} className="event-item">
               <Calendar size={16} />
 
               <div className="event-details">
-                <span className="event-title">{event.title}</span>
-                <span className="event-date">{event.date}</span>
+                <span className="event-title">{upcomingEvent.title}</span>
+                <span className="event-date">{upcomingEvent.date}</span>
               </div>
             </div>
           ))}
@@ -52,6 +53,7 @@ function RightSideBar() {
           <button
             type="button"
             aria-label="Click to add a new task"
+            title="Add new task"
             className="add-btn"
           >
             <Plus size={16} />

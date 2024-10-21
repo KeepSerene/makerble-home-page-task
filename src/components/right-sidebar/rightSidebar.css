@@ -2,13 +2,15 @@
   width: 300px;
   padding: var(--spacing-md);
   background-color: var(--background-white);
-  height: calc(100vh - 64px); /* Subtract navbar height */
+  height: calc(100vh - 72px); /* Subtract navbar height */
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+
   position: fixed;
   right: 0;
-  top: 64px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+  top: 72px;
+
+  display: grid;
   gap: var(--spacing-md);
 }
 
@@ -116,16 +118,24 @@
 /* Tablet and Mobile styles */
 @media screen and (max-width: 1023px) {
   .right-sidebar {
-    position: static;
-    width: 100%;
+    width: calc(
+      100% - 250px - 1rem
+    ); /* Subtract the left sidebar width and the padding of the content */
     height: auto;
+    background-color: var(--background-light);
+    margin-left: 250px;
     margin-top: var(--spacing-md);
+
+    position: static;
   }
 }
 
 /* Mobile styles */
 @media screen and (max-width: 767px) {
   .right-sidebar {
+    width: 100%;
     padding-bottom: 80px; /* Space for bottom navigation */
+    margin-right: 0;
+    margin-left: 0;
   }
 }

@@ -6,6 +6,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .navbar-logo {
@@ -49,21 +55,37 @@
   color: var(--primary-color);
 }
 
+.hamburger-btn {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border-radius: 50%;
+  border: none;
+
+  transition: 250ms ease-in-out;
+  transition-property: background-color, color;
+}
+
+.hamburger-btn:where(:hover, :focus-visible) {
+  background-color: var(--background-light);
+  color: var(--primary-color);
+}
+
 .navbar-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
+  display: none;
 }
 
 .notification-btn {
-  background: none;
+  background: transparent;
   color: var(--text-secondary);
+  border-radius: 50%;
   border: none;
 
-  transition: color 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+  transition-property: background-color, color;
 }
 
 .notification-btn:where(:hover, :focus-visible) {
+  background-color: var(--background-light);
   color: var(--primary-color);
 }
 
@@ -74,10 +96,71 @@
   background-color: var(--border-color);
 }
 
+.mobile-nav-menu {
+  display: none;
+}
+
+.mobile-nav-menu.open {
+  width: 250px;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--background-white);
+  color: var(--text-secondary);
+  padding: var(--spacing-md);
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.close-btn {
+  align-self: start;
+
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 50%;
+  border: none;
+
+  transition: 250ms ease-in-out;
+  transition-property: background-color, color;
+}
+
+.close-btn:where(:hover, :focus-visible) {
+  background-color: var(--background-light);
+  color: var(--primary-color);
+}
+
+.mobile-nav-links {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.mobile-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
 /* Tablet and up */
 @media screen and (min-width: 768px) {
   .navbar-links {
     display: flex;
     align-items: center;
+  }
+
+  .hamburger-btn {
+    display: none;
+  }
+
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
   }
 }

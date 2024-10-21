@@ -5,29 +5,26 @@
 }
 
 .main-container {
-  display: flex;
-  margin-top: 64px; /* Height of navbar */
+  margin-top: 72px; /* Height of navbar */
 }
 
 .content {
-  flex: 1;
-
   padding: var(--spacing-md);
-  margin-left: 250px; /* Width of sidebar */
-  margin-right: 300px; /* Width of right sidebar */
+  margin-left: 250px; /* Width of the left sidebar */
+  margin-right: 300px; /* Width of the right sidebar */
 }
 
 /* Tablet styles */
 @media screen and (max-width: 1023px) {
   .content {
-    margin-right: 0; /* Remove right sidebar margin */
+    margin-right: 0; /* Remove the right sidebar margin */
   }
 }
 
 /* Mobile styles */
 @media screen and (max-width: 767px) {
   .content {
-    margin-left: 0; /* Remove left sidebar margin */
+    margin-left: 0; /* Remove the left sidebar margin */
     margin-bottom: 60px; /* Space for bottom navigation */
   }
 }
