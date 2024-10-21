@@ -69,19 +69,31 @@ function Navbar() {
 
         <ul role="list" className="mobile-nav-links">
           <li>
-            <a href="#" className="nav-link">
+            <a
+              href="#"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="nav-link"
+            >
               My apps
             </a>
           </li>
 
           <li>
-            <a href="#" className="nav-link active">
+            <a
+              href="#"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="nav-link active"
+            >
               Home
             </a>
           </li>
 
           <li>
-            <a href="#" className="nav-link">
+            <a
+              href="#"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="nav-link"
+            >
               Explore
             </a>
           </li>
