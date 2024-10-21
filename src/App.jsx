@@ -5,7 +5,7 @@ import { useState } from "react";
 
 // Component imports
 import Navbar from "./components/navbar/Navbar";
-import LeftSideBar from "./components/left-sidebar/LeftSideBar";
+import LeftSidebar from "./components/left-sidebar/LeftSidebar";
 import FilterTabs from "./components/filter-tabs/FilterTabs";
 import ContentCards from "./components/contentCards/ContentCards";
 import RightSideBar from "./components/right-sidebar/RightSidebar";
@@ -29,7 +29,7 @@ function App() {
       <Navbar />
 
       <div className="main-container">
-        <LeftSideBar
+        <LeftSidebar
           activeNavItem={activeNavItem}
           onNavItemClick={handleNavItemClick}
         />

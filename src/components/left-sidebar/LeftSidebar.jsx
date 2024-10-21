@@ -14,7 +14,7 @@ import {
   Users,
 } from "lucide-react";
 
-function LeftSideBar({ activeNavItem, onNavItemClick }) {
+function LeftSidebar({ activeNavItem, onNavItemClick }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const navItems = [
@@ -60,4 +60,4 @@ function LeftSideBar({ activeNavItem, onNavItemClick }) {
   );
 }
 
-export default LeftSideBar;
+export default LeftSidebar;
