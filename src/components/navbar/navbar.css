@@ -106,6 +106,8 @@
   height: 100dvh;
   background-color: var(--background-white);
   color: var(--text-secondary);
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
   padding: var(--spacing-md);
   box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
 
