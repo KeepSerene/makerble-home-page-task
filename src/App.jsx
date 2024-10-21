@@ -8,7 +8,7 @@ import Navbar from "./components/navbar/Navbar";
 import LeftSidebar from "./components/left-sidebar/LeftSidebar";
 import FilterTabs from "./components/filter-tabs/FilterTabs";
 import ContentCards from "./components/contentCards/ContentCards";
-import RightSideBar from "./components/right-sidebar/RightSidebar";
+import RightSidebar from "./components/right-sidebar/RightSidebar";
 
 function App() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -46,7 +46,7 @@ function App() {
           />
         </main>
 
-        <RightSideBar />
+        <RightSidebar />
       </div>
     </div>
   );

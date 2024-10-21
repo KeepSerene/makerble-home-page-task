@@ -3,7 +3,7 @@ import "./rightSidebar.css";
 // Icon imports
 import { Calendar, Plus } from "lucide-react";
 
-function RightSideBar() {
+function RightSidebar() {
   const upcomingEvents = [
     { id: 1, title: "Team Meeting", date: "Oct 21, 2024" },
     { id: 2, title: "Project Deadline", date: "Oct 23, 2024" },
@@ -82,4 +82,4 @@ function RightSideBar() {
   );
 }
 
-export default RightSideBar;
+export default RightSidebar;
