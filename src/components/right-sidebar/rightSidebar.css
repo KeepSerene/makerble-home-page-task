@@ -125,6 +125,7 @@
     background-color: var(--background-light);
     margin-left: 250px;
     margin-top: var(--spacing-md);
+    box-shadow: unset;
 
     position: static;
   }
