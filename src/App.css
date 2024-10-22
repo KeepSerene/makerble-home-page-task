@@ -28,3 +28,14 @@
     margin-bottom: 60px; /* Space for bottom navigation */
   }
 }
+
+/* Screen-reader only element styles */
+.sr-only {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  position: absolute;
+  top: auto;
+  left: -99999px;
+}

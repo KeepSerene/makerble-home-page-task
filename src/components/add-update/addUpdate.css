@@ -1,0 +1,148 @@
+.add-update-container {
+  background-color: var(--background-white);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.update-header {
+  margin-bottom: var(--spacing-md);
+
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.user-avatar {
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+  background-color: var(--background-light);
+  border-radius: 50%;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info h3 {
+  color: var(--text-primary);
+  font-size: 0.938rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.update-prompt {
+  color: var(--text-secondary);
+  font-size: 0.813rem;
+}
+
+.update-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.input-container {
+  width: 100%;
+}
+
+.user-input {
+  width: 100%;
+  min-height: 80px;
+  background-color: var(--background-light);
+  color: var(--text-primary);
+  font-size: 0.938rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: var(--spacing-sm);
+  resize: vertical;
+
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+#update-title {
+  min-height: 0;
+  padding: var(--spacing-md);
+}
+
+.user-input:focus {
+  background-color: var(--background-white);
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.user-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 20px;
+  padding: var(--spacing-sm) var(--spacing-lg);
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.post-btn:where(:hover:not(:disabled), :focus-visible:not(:disabled)) {
+  background-color: #1557b0;
+  transform: translateY(-1px);
+}
+
+.post-btn:disabled {
+  background-color: var(--text-secondary);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.status-msg {
+  font-size: 1rem;
+  margin-block: var(--spacing-sm);
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .add-update-container {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .add-update-container {
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .update-header {
+    gap: var(--spacing-sm);
+  }
+
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .user-input {
+    min-height: 60px;
+    font-size: 0.875rem;
+  }
+
+  .post-btn {
+    width: 100%;
+    padding: var(--spacing-sm);
+  }
+}

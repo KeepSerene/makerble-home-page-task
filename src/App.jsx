@@ -9,10 +9,16 @@ import LeftSidebar from "./components/left-sidebar/LeftSidebar";
 import FilterTabs from "./components/filter-tabs/FilterTabs";
 import ContentCards from "./components/contentCards/ContentCards";
 import RightSidebar from "./components/right-sidebar/RightSidebar";
+import AddUpdate from "./components/add-update/AddUpdate";
+
+// Library imports
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeNavItem, setActiveNavItem] = useState(null);
+  const [updates, setUpdates] = useState([]);
 
   const handleFilterChange = (filter) => {
     setActiveFilter(filter);
@@ -22,6 +28,10 @@ function App() {
   const handleNavItemClick = (navItem) => {
     setActiveNavItem(navItem);
     setActiveFilter("all");
+  };
+
+  const handleAddUpdate = (newUpdate) => {
+    setUpdates((prevUpdates) => [newUpdate, ...prevUpdates]);
   };
 
   return (
@@ -35,6 +45,10 @@ function App() {
         />
 
         <main className="content">
+          {(activeFilter === "all" || activeFilter === "updates") && (
+            <AddUpdate onAddUpdate={handleAddUpdate} />
+          )}
+
           <FilterTabs
             activeFilter={activeFilter}
             onFilterChange={handleFilterChange}
@@ -43,11 +57,14 @@ function App() {
           <ContentCards
             activeFilter={activeFilter}
             activeNavItem={activeNavItem}
+            userUpdates={updates}
           />
         </main>
 
         <RightSidebar />
       </div>
+
+      <ToastContainer position="bottom-right" />
     </div>
   );
 }

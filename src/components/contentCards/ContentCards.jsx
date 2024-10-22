@@ -3,7 +3,7 @@ import "./contentCards.css";
 // Data import
 import { sampleData } from "../../data/sampleData";
 
-function ContentCards({ activeFilter, activeNavItem }) {
+function ContentCards({ activeFilter, activeNavItem, userUpdates = [] }) {
   const getContent = () => {
     if (activeNavItem) {
       return sampleData[activeNavItem] || [];
@@ -11,10 +11,15 @@ function ContentCards({ activeFilter, activeNavItem }) {
 
     if (activeFilter === "all") {
       return [
+        ...userUpdates,
         ...sampleData.updates,
         ...sampleData.events,
         ...sampleData.projects,
       ];
+    }
+
+    if (activeFilter === "updates") {
+      return [...userUpdates, ...sampleData.updates];
     }
 
     return sampleData[activeFilter] || [];

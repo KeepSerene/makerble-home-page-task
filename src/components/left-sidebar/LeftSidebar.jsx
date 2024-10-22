@@ -34,8 +34,16 @@ function LeftSidebar({ activeNavItem, onNavItemClick }) {
       <button
         type="button"
         onClick={() => setIsCollapsed(!isCollapsed)}
-        aria-label="Click to toggle the left sidebar"
-        title="Toggle the left sidebar"
+        aria-label={
+          isCollapsed
+            ? "Click to expand the left sidebar"
+            : "Click to collapse the left sidebar"
+        }
+        title={
+          isCollapsed
+            ? "Click to expand the left sidebar"
+            : "Click to collapse the left sidebar"
+        }
         className="collapse-btn"
       >
         {isCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
