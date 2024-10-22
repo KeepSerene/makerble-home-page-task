@@ -70,11 +70,15 @@
   line-height: 1.5;
 }
 
-/* Event card specific styles */
-.content-card.event {
+/* Shared styles among specific cards */
+.content-card.event,
+.content-card.album,
+.content-card.organization,
+.content-card.contact {
   border-left: 4px solid var(--primary-color);
 }
 
+/* Event card specific styles */
 .content-card.event .card-content p {
   font-size: 0.875rem;
   margin-top: var(--spacing-xs);
@@ -94,6 +98,52 @@
   background-color: var(--primary-color);
 
   transition: width 300ms ease;
+}
+
+/* Album, Organization, & Contact card specific styles */
+.content-card:where(.album, .organization, .contact) .card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.card-icon {
+  color: var(--primary-color);
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.card-info h4 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.card-info p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.inline-icon {
+  color: var(--primary-color);
+}
+
+.department {
+  background-color: var(--background-light);
+  font-size: 0.813rem;
+  border-radius: 4px;
+  padding: var(--spacing-xs) var(--spacing-sm);
 }
 
 /* Tablet styles */
@@ -128,5 +178,17 @@
 
   .card-content p {
     font-size: 0.875rem;
+  }
+
+  .content-card:where(.album, .organization, .contact) .card-header {
+    gap: var(--spacing-sm);
+  }
+
+  .card-info h4 {
+    font-size: 0.938rem;
+  }
+
+  .card-info p {
+    font-size: 0.813rem;
   }
 }

@@ -47,7 +47,12 @@ function AddBoardModal({ isOpen, onClose, onAddBoard }) {
         <div className="modal-header">
           <h2 className="modal-title">Add New Board</h2>
 
-          <button type="button" onClick={onClose} className="modal-close-btn">
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Click to close the modal"
+            className="modal-close-btn"
+          >
             <X size={20} />
           </button>
         </div>

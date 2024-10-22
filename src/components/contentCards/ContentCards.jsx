@@ -3,6 +3,9 @@ import "./contentCards.css";
 // Data import
 import { sampleData } from "../../data/sampleData";
 
+// Icon imports
+import { AtSign, Building2, FolderOpen } from "lucide-react";
+
 function ContentCards({ activeFilter, activeNavItem, userUpdates = [] }) {
   const getContent = () => {
     if (activeNavItem) {
@@ -78,6 +81,55 @@ function ContentCards({ activeFilter, activeNavItem, userUpdates = [] }) {
 
               <p>Deadline: {item.deadline}</p>
             </section>
+          </div>
+        );
+
+      case "album":
+        return (
+          <div className="content-card album">
+            <div className="card-header">
+              <FolderOpen size={20} className="card-icon" />
+
+              <section className="card-info">
+                <h4>{item.title}</h4>
+                <p>{item.imageCount} images</p>
+              </section>
+            </div>
+          </div>
+        );
+
+      case "organization":
+        return (
+          <div className="content-card organization">
+            <div className="card-header">
+              <Building2 size={20} className="card-icon" />
+
+              <section className="card-info">
+                <h4>{item.title}</h4>
+                <p>Role: {item.role}</p>
+              </section>
+            </div>
+          </div>
+        );
+
+      case "contact":
+        return (
+          <div className="content-card contact">
+            <div className="card-header">
+              <img
+                src="https://picsum.photos/200"
+                alt={`${item.name}'s avatar`}
+                className="author-avatar"
+              />
+
+              <section className="card-info">
+                <h4>{item.name}</h4>
+                <p>
+                  <AtSign size={14} className="inline-icon" /> {item.tag}
+                </p>
+                <p className="department">{item.department}</p>
+              </section>
+            </div>
           </div>
         );
 

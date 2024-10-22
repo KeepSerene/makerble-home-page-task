@@ -33,7 +33,7 @@ function Navbar() {
         <button
           type="button"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Click to toggle mobile menu"
+          aria-label="Click to open the mobile menu"
           className="hamburger-btn"
         >
           <Menu />
@@ -57,11 +57,12 @@ function Navbar() {
         </div>
       </nav>
 
-      <div className={`mobile-nav-menu ${isMobileMenuOpen ? "open" : ""}`}>
+      {/* Mobile nav menu */}
+      <nav className={`mobile-nav-menu ${isMobileMenuOpen ? "open" : ""}`}>
         <button
           type="button"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Click to toggle the mobile menu"
+          aria-label="Click to close the mobile menu"
           className="close-btn"
         >
           <X />
@@ -115,7 +116,7 @@ function Navbar() {
             className="avatar"
           />
         </div>
-      </div>
+      </nav>
     </header>
   );
 }
