@@ -64,7 +64,7 @@ function App() {
         <RightSidebar />
       </div>
 
-      <ToastContainer position="bottom-right" />
+      <ToastContainer position="top-right" />
     </div>
   );
 }
