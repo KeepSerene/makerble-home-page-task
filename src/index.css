@@ -5,12 +5,12 @@
   --ff: "Sofia Sans", sans-serif;
 
   /* Colors */
-  --primary-color: #1a73e8;
-  --text-primary: #333333;
-  --text-secondary: #666666;
-  --background-light: #f8f9fa;
-  --background-white: #ffffff;
-  --border-color: #e0e0e0;
+  --primary-color: hsl(214, 82%, 51%);
+  --text-primary: hsl(0, 0%, 20%);
+  --text-secondary: hsl(0, 0%, 40%);
+  --background-light: hsl(210, 17%, 98%);
+  --background-white: hsl(0, 0%, 100%);
+  --border-color: hsl(0, 0%, 88%);
 
   /* Spacing */
   --spacing-xs: 0.25rem;

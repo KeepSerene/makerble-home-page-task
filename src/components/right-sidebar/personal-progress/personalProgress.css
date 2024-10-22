@@ -1,0 +1,68 @@
+.parent-board-link {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  text-decoration: underline;
+  text-transform: capitalize;
+
+  transition: color 250ms ease-in-out;
+}
+
+.parent-board-link:where(:hover, :focus-visible) {
+  color: var(--primary-color);
+}
+
+.progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.progress-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-title {
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  text-transform: capitalize;
+}
+
+.progress-percentage {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.progress-bar {
+  height: 4px;
+  background-color: var(--background-light);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--primary-color);
+
+  transition: width 300ms ease-in-out;
+}
+
+/* Responsive styles */
+@media screen and (max-width: var(--tablet)) {
+  .progress-list {
+    gap: var(--spacing-sm);
+  }
+}
+
+@media screen and (max-width: var(--mobile)) {
+  .progress-title {
+    font-size: 0.8125rem;
+  }
+}
