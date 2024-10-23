@@ -1,7 +1,7 @@
 import "./addBoardModal.css";
 
 // React imports
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Library imports
 import { X } from "lucide-react";
@@ -12,6 +12,14 @@ function AddBoardModal({ isOpen, onClose, onAddBoard }) {
   const [description, setDescription] = useState("");
   const [statusMsg, setStatusMsg] = useState("");
   const [shouldThrowErr, setShouldThrowErr] = useState(false);
+
+  const firstInputRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen && firstInputRef.current) {
+      firstInputRef.current.focus(); // Set focus on the first input when modal opens
+    }
+  }, [isOpen]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -42,10 +50,18 @@ function AddBoardModal({ isOpen, onClose, onAddBoard }) {
   if (!isOpen) return null;
 
   return (
-    <div className="modal-overlay">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+      className="modal-overlay"
+    >
       <div className="modal-container">
         <div className="modal-header">
-          <h2 className="modal-title">Add New Board</h2>
+          <h2 id="modal-title" className="modal-title">
+            Add New Board
+          </h2>
 
           <button
             type="button"
@@ -64,8 +80,9 @@ function AddBoardModal({ isOpen, onClose, onAddBoard }) {
             </label>
 
             <input
-              id="board-title"
               type="text"
+              ref={firstInputRef}
+              id="board-title"
               value={title}
               onChange={(event) => setTitle(event.target.value)}
               placeholder="Enter board title"
@@ -74,7 +91,11 @@ function AddBoardModal({ isOpen, onClose, onAddBoard }) {
           </div>
 
           <div className="form-group">
-            <label htmlFor="board-description" className="form-label">
+            <label
+              htmlFor="board-description"
+              id="modal-description"
+              className="form-label"
+            >
               Description
             </label>
 

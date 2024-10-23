@@ -7,9 +7,10 @@ import { useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import LeftSidebar from "./components/left-sidebar/LeftSidebar";
 import FilterTabs from "./components/filter-tabs/FilterTabs";
+import AddUpdate from "./components/add-update/AddUpdate";
 import ContentCards from "./components/contentCards/ContentCards";
 import RightSidebar from "./components/right-sidebar/RightSidebar";
-import AddUpdate from "./components/add-update/AddUpdate";
+import Footer from "./components/footer/Footer";
 
 // Library imports
 import "react-toastify/dist/ReactToastify.css";
@@ -62,6 +63,8 @@ function App() {
         </main>
 
         <RightSidebar />
+
+        <Footer />
       </div>
 
       <ToastContainer position="top-right" />

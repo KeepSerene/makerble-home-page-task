@@ -52,6 +52,7 @@ function Navbar() {
           <img
             src="https://picsum.photos/200"
             alt="User avatar"
+            title="John Doe"
             className="avatar"
           />
         </div>

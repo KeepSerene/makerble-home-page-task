@@ -46,13 +46,12 @@
   transition-property: background-color, color;
 }
 
-.add-btn:where(:hover, :focus-visible) {
+.add-btn:where(:hover, :focus) {
   background-color: var(--background-light);
   color: var(--primary-color);
 }
 
-.boards-list,
-.tasks-list {
+.boards-list {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
@@ -89,6 +88,7 @@
     ); /* Subtract the left sidebar width and the padding of the content */
     height: auto;
     background-color: var(--background-light);
+    padding: var(--spacing-md) 0 var(--spacing-md) var(--spacing-md);
     margin-left: 250px;
     margin-top: var(--spacing-md);
     box-shadow: unset;

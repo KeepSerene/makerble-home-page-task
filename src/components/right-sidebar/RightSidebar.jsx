@@ -1,5 +1,7 @@
-import { useState } from "react";
 import "./rightSidebar.css";
+
+// React imports
+import { useRef, useState } from "react";
 
 // Icon imports
 import { ClipboardPen, Plus } from "lucide-react";
@@ -8,9 +10,28 @@ import AddBoardModal from "./add-board-modal/AddBoardModal";
 // Component imports
 import PersonalProgress from "./personal-progress/PersonalProgress";
 import Tasks from "./tasks/Tasks";
+import { Followers, Following } from "./social/SocialCards";
 
 function RightSidebar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const addBoardBtnRef = useRef(null);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+
+    if (addBoardBtnRef.current) {
+      addBoardBtnRef.current.focus(); // Return focus to the add-btn when modal closes
+    }
+  };
+
+  const handleAddBoard = (newBoard) => {
+    setBoards((prevBoards) => [newBoard, ...prevBoards]);
+  };
 
   const [boards, setBoards] = useState([
     { id: 1, title: "Angola production", description: "Some description..." },
@@ -22,10 +43,6 @@ function RightSidebar() {
     { id: 3, title: "CHIVA RYH", description: "Some description..." },
   ]);
 
-  const handleAddBoard = (newBoard) => {
-    setBoards((prevBoards) => [newBoard, ...prevBoards]);
-  };
-
   return (
     <aside className="right-sidebar">
       {/* Boards */}
@@ -35,7 +52,8 @@ function RightSidebar() {
 
           <button
             type="button"
-            onClick={() => setIsModalOpen(true)}
+            ref={addBoardBtnRef}
+            onClick={handleOpenModal}
             aria-label="Click to add a new board"
             title="Add new board"
             className="add-btn"
@@ -62,9 +80,13 @@ function RightSidebar() {
 
       <Tasks />
 
+      {/* Social cards */}
+      <Followers />
+      <Following />
+
       <AddBoardModal
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={handleCloseModal}
         onAddBoard={handleAddBoard}
       />
     </aside>

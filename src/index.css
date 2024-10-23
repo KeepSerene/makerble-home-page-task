@@ -11,6 +11,7 @@
   --background-light: hsl(210, 17%, 98%);
   --background-white: hsl(0, 0%, 100%);
   --border-color: hsl(0, 0%, 88%);
+  --clr-charcoal: hsl(218, 22%, 26%);
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -53,6 +54,10 @@ figure,
 svg {
   display: block;
   max-width: 100%;
+}
+
+img {
+  object-fit: cover;
 }
 
 h1,
