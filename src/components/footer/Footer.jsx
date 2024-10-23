@@ -125,6 +125,17 @@ function Footer() {
           </a>
         </div>
       </div>
+
+      <p className="footer-developer-credit">
+        Developed by{" "}
+        <a
+          href="https://github.com/KeepSerene/"
+          target="_blank"
+          className="developer-link"
+        >
+          Dhrubajyoti Bhattacharjee.
+        </a>
+      </p>
     </footer>
   );
 }

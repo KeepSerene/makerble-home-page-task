@@ -1,14 +1,13 @@
 .parent-board-link {
-  color: var(--text-secondary);
+  color: var(--primary-color);
   font-size: 0.75rem;
-  text-decoration: underline;
   text-transform: capitalize;
 
-  transition: color 250ms ease-in-out;
+  transition: opacity 250ms ease-in-out;
 }
 
 .parent-board-link:where(:hover, :focus-visible) {
-  color: var(--primary-color);
+  opacity: 0.8;
 }
 
 .progress-list {

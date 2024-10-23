@@ -2,7 +2,8 @@
   background-color: var(--border-color);
   color: var(--text-primary);
   border-top: 3px solid var(--primary-color);
-  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   padding: var(--spacing-lg) var(--spacing-md);
   margin-left: calc(
     250px + var(--spacing-md)
@@ -10,14 +11,13 @@
   margin-right: calc(
     300px + var(--spacing-md)
   ); /* Add the width of the right sidebar */
+  box-shadow: 1px 0 3px 1px rgba(0, 0, 0, 0.1),
+    -1px 0 3px 1px rgba(0, 0, 0, 0.1);
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-rows: auto auto;
   gap: var(--spacing-lg);
-}
-
-.footer-column {
-  margin-bottom: var(--spacing-lg); /* Space between rows on mobile/tablet */
 }
 
 .footer-title {
@@ -60,6 +60,54 @@
 
 .footer-social-icons a:where(:hover, :focus-visible) {
   color: var(--primary-color);
+}
+
+.footer-developer-credit {
+  grid-column: 1 / -1;
+  justify-self: center;
+
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-transform: capitalize;
+}
+
+.developer-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: opacity 250ms ease-in-out;
+}
+
+.developer-link:hover {
+  opacity: 0.9;
+}
+
+.developer-link:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.developer-link::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: var(--primary-color);
+
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+
+  transform: scaleX(0);
+  transform-origin: bottom right;
+
+  transition: transform 250ms ease-in-out;
+}
+
+.developer-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* Tablet Styles */
