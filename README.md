@@ -12,6 +12,6 @@
 - **Form Validation & CRUD Feedback**: Incorporated toast notifications (via React-Toastify) for form validations and CRUD operation feedback messages.
 - **Modal Window**: Included a modal window with accessible and user-friendly interaction.
 
-### Live site link
+### Live Site Link
 
 - See [here](https://makerble-reimagined.vercel.app/).
