@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--border-color);
   color: var(--text-primary);
-  border-top: 2px solid var(--primary-color);
+  border-top: 3px solid var(--primary-color);
   border-radius: 8px;
   padding: var(--spacing-lg) var(--spacing-md);
   margin-left: calc(
