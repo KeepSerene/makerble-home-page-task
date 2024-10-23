@@ -101,7 +101,8 @@
 @media screen and (max-width: 767px) {
   .right-sidebar {
     width: 100%;
-    padding-bottom: 80px; /* Space for bottom navigation */
+    padding: var(--spacing-md) var(--spacing-md) calc(2 * var(--spacing-md))
+      var(--spacing-md);
     margin-right: 0;
     margin-left: 0;
   }
